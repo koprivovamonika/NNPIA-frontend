@@ -2,12 +2,11 @@ import './style.css'
 
 function Header(){
     return(
-        <div className="card bg-dark text-white">
-            <img src={process.env.PUBLIC_URL + '/salon.jpg'} className="card-img" alt=".."/>
-                <div className="card-img-overlay">
-                    <h1 className="card-title">Kosmetický salon</h1>
-                </div>
-        </div>
-    )
+        <section className="banner2">
+            <div className="banner mx-auto">
+                <h1 className="card-title">Beauty salon</h1>
+            </div>
+        </section>)
+
 }
 export default Header;

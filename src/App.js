@@ -7,6 +7,9 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Main from "./components/Main";
 import Header from "./components/Header";
+import Login from "./components/Login";
+import Logout from "./components/Logout";
+import Reservation from "./components/Reservation";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(AuthService.getUserInfo() !== null);
@@ -21,17 +24,13 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Main />}/>
 
-            <Route exact path="/czech" render={Main}/>
+            <Route exact path="/reservation" element={<Reservation/>}/>
 
             <Route path="/about" />
 
-            <Route path="/login" render={
-              (routeProps) => {}} />
-            } />
+            <Route path="/login" element={<Login {...{setLoggedIn}}/>} />
 
-            <Route path="/logout" render={
-              (routeProps) => {}}  />
-            } />
+            <Route path="/logout" element={<Logout {...{setLoggedIn}}/>}/>
 
             <Route path="/registration" />
 

@@ -1,5 +1,5 @@
 import './style.css'
-import {Link} from "react-router-dom";
+import { HashLink as Link } from 'react-router-hash-link';
 
 function Navbar({loggedIn}){
     return(
@@ -18,10 +18,10 @@ function Navbar({loggedIn}){
                             <Link className="nav-link" to="/">Home</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/">Procedures</Link>
+                            <Link className="nav-link" to="/#procedures">Procedures</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/czech">Reservation</Link>
+                            <Link className="nav-link" to="/reservation">Reservation</Link>
                         </li>
                     </ul>
                     : <ul className="navbar-nav mr-auto">
