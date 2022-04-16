@@ -64,7 +64,7 @@ function CalendarComponent(props) {
                         )
 
                         )
-                        : <h3>We currently do not offer any cosmetic treatments.</h3>
+                        : <h3>We have no times available for this day.</h3>
                     }
 
                 </div>

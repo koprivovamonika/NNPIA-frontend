@@ -12,7 +12,6 @@ function Main(){
         PublicService.getProcedures().then(result => {
             if(result.data.status === 200){
                 setProcedures(result.data.result);
-                console.log(result.data.result)
             }
         })
     },[]);

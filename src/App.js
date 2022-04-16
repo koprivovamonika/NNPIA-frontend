@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import {useState} from "react";
 import AuthService from "./service/AuthService";
@@ -10,6 +9,11 @@ import Header from "./components/Header";
 import Login from "./components/Login";
 import Logout from "./components/Logout";
 import Reservation from "./components/Reservation";
+import Administration from "./components/Administration";
+import AdmReservation from "./components/AdmReservation";
+import EditUser from "./components/EditUser";
+import AdmProcedures from "./components/AdmProcedures";
+import AddOrEditProcedure from "./components/AddOrEditProcedure";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(AuthService.getUserInfo() !== null);
@@ -26,33 +30,19 @@ function App() {
 
             <Route exact path="/reservation" element={<Reservation/>}/>
 
-            <Route path="/about" />
-
             <Route path="/login" element={<Login {...{setLoggedIn}}/>} />
 
             <Route path="/logout" element={<Logout {...{setLoggedIn}}/>}/>
 
-            <Route path="/registration" />
+            <Route path="/administration" element={<Administration />}/>
 
-            <Route path="/edit"/>
+            <Route path="/edit" element={<EditUser/>}/>
 
-            <Route path="/main"/>
+            <Route path="/adm_procedures" element={<AdmProcedures />}/>
 
-            <Route path="/create"/>
+            <Route path="/adm_reservation" element={<AdmReservation />}/>
 
-            <Route path="/czech"/>
-
-            <Route path="/choose"/>
-
-            <Route path="/top" />
-
-            <Route path="/showDone" render={
-              (routeProps) => {}}  />
-            } />
-
-            <Route path="/showWait" render={
-              (routeProps) => {}}  />
-            } />
+            <Route path="/create_update_procedure" element={<AddOrEditProcedure />}/>
 
           </Routes>
           <Footer/>

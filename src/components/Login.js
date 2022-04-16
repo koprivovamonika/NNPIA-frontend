@@ -22,7 +22,7 @@ function Login(props){
             if(res.data.status === 200){
                 localStorage.setItem("userInfo", JSON.stringify(res.data.result));
                 props.setLoggedIn(true);
-                navigate('/');
+                navigate('/administration');
             }else {
                 setMessage(res.data.message);
             }

@@ -14,7 +14,6 @@ class PublicService {
     }
 
     createReservation(reservation){
-        console.log(reservation);
         return axios.post(USER_API_BASE_URL+'reservation', reservation)
     }
 

@@ -26,13 +26,13 @@ function Navbar({loggedIn}){
                     </ul>
                     : <ul className="navbar-nav mr-auto">
                         <li className="nav-item active">
-                            <Link className="nav-link" to="/">Home</Link>
+                            <Link className="nav-link" to="/administration">Administration</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/main">Procedures</Link>
+                            <Link className="nav-link" to="/adm_procedures">Manage Procedures</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/choose">Reservations</Link>
+                            <Link className="nav-link" to="/adm_reservation">Manage Reservations</Link>
                         </li>
                     </ul>
                 }

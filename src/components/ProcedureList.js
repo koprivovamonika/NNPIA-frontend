@@ -1,5 +1,4 @@
 import './style.css'
-import {HashLink as Link} from "react-router-hash-link";
 
 function ProcedureList({clickable, row, setProcedure}){
     return(

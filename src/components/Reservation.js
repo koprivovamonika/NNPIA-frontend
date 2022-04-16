@@ -78,7 +78,6 @@ function Reservation() {
         }
     }
 
-
     const handleChangeEmail = (e) => {
         setEmail(e.target.value);
     }
@@ -103,7 +102,7 @@ function Reservation() {
                         {procedures.length
                             ? procedures.map(row => <ProcedureList clickable={true} key={row.name} row={row}
                                                                    setProcedure={setProcedure}/>)
-                            : <h3>We have no times available for this day.</h3>
+                            : <h3>We currently do not offer any cosmetic treatments.</h3>
                         }
                     </div>
                 </div>
