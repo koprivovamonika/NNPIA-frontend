@@ -5,11 +5,11 @@ import PublicService from "../service/PublicService";
 import './style.css'
 
 function CalendarComponent(props) {
-    const date3 = new Date();
-    date3.setDate(date3.getDate() + 1);
-    const newDate = new Date();
-    newDate.setMonth(newDate.getMonth()+4);
-    const [date, setDate] = useState(date3);
+    const firstAvailableDay = new Date();
+    firstAvailableDay.setDate(firstAvailableDay.getDate() + 1);
+    const maxMonth = new Date();
+    maxMonth.setMonth(maxMonth.getMonth()+4);
+    const [date, setDate] = useState(firstAvailableDay);
 
     const[timeslots, setTimeslots] = useState([]);
     const [tripType, setTripType] = useState("");
@@ -42,7 +42,7 @@ function CalendarComponent(props) {
         <div className='row w-100'>
             <h3 className='text-center'>Select date</h3>
             <div className='calendar-container col-5'>
-                <Calendar onChange={getTimeSlots} value={date} minDate={date3} maxDate={newDate} minDetail={"month"} tileDisabled={({date}) => date.getDay() === 0 || date.getDay() === 6}/>
+                <Calendar onChange={getTimeSlots} value={date} minDate={firstAvailableDay} maxDate={maxMonth} minDetail={"month"} tileDisabled={({date}) => date.getDay() === 0 || date.getDay() === 6}/>
             </div>
             <div className='col-7'>
                 <div className="radio-btn-container row">

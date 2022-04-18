@@ -143,6 +143,9 @@ function AdmReservation() {
                 ))
                 : <h2 className="mt-5">No reservations for this day</h2>
             }</div>
+            {reservations.length ?
+
+
             <Pagination
                 activePage={page + 1}
                 itemsCountPerPage={pageSize}
@@ -150,7 +153,9 @@ function AdmReservation() {
                 pageRangeDisplayed={5}
                 onChange={handlePageChange}
             />
-
+                :
+                <></>
+            }
 
         </div>
     );
