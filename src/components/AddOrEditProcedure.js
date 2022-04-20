@@ -75,7 +75,6 @@ function AddOrEditProcedure(props) {
         setPrice(e.target.value)
     }
 
-
     return (
         <div className="container w-50 mx-auto mt-4">
             <h3>Procedure</h3>
@@ -97,7 +96,6 @@ function AddOrEditProcedure(props) {
                                value={description} onChange={handleChangeDescription}
                                required/>
                     </div>
-
                 </div>
                 <div className="form-group row">
                     <label className="col-sm-3 col-form-label">Price</label>
@@ -106,7 +104,6 @@ function AddOrEditProcedure(props) {
                                value={price} onChange={handleChangePrice}
                                required/>
                     </div>
-
                 </div>
                 <button type="submit" className="btn btn-primary w-25 mt-3">Save</button>
             </form>

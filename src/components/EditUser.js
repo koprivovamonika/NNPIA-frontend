@@ -63,7 +63,6 @@ function EditUser() {
                                value={passwordNew} onChange={handleChangePasswordNew}
                                required/>
                     </div>
-
                 </div>
                 <button type="submit" className="btn btn-primary w-25 mt-3">Change</button>
             </form>

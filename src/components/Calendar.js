@@ -48,11 +48,8 @@ function CalendarComponent(props) {
                 <div className="radio-btn-container row">
                     {timeslots.length
                         ? timeslots.map(row => (
-
                             <div
-                                style={
-                                    {backgroundColor:!row.slotFree ? "grey" : tripType == row.startTime ? "#0dcaf0" : "#0d6efd"}
-                                }
+                                style={{backgroundColor:!row.slotFree ? "grey" : tripType == row.startTime ? "#0dcaf0" : "#0d6efd"}}
                                 key={row.startTime}
                                 className="radio-btn card text-white col-5 m-2 p-2"
                                 onClick={() => {clickHandler(row)}}
@@ -60,13 +57,9 @@ function CalendarComponent(props) {
                                 {row.startTime} : {row.endTime}
 
                             </div>
-
-                        )
-
-                        )
+                        ))
                         : <h3>We have no times available for this day.</h3>
                     }
-
                 </div>
             </div>
         </div>

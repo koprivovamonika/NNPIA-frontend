@@ -57,7 +57,6 @@ function Login(props){
                         <input type="password" className="form-control" placeholder="Password" name="password"
                                value={password} onChange={handleChangePass} required={ true }/>
                     </div>
-
                 </div>
                 <button type="submit" className="btn btn-primary w-25" onClick={login}>Login</button>
             </form>

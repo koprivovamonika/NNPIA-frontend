@@ -22,7 +22,6 @@ function Reservation() {
             if (result.data.status === 200) {
                 setProcedures(result.data.result);
             }
-
         })
     }, []);
 
@@ -69,7 +68,6 @@ function Reservation() {
                 if (result.data.status === 200) {
                     navigate("/");
                 }
-
             })
             setMessage("");
         }else{
