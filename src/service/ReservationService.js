@@ -11,15 +11,15 @@ class ReservationService {
     }
 
     setReservationAsDone(reservationId){
-        return axios.put(USER_API_BASE_URL+'/asDone?resId=' + reservationId, null, AuthService.getAuthHeader());
+        return axios.put(USER_API_BASE_URL+'/asDone', {reservationId: reservationId}, AuthService.getAuthHeader());
     }
 
     confirmReservation(id){
-        return axios.put(USER_API_BASE_URL+'/confirm?resId='+id,null, AuthService.getAuthHeader());
+        return axios.put(USER_API_BASE_URL+'/confirm', {reservationId:id}, AuthService.getAuthHeader());
     }
 
     cancelReservation(reservationId, description){
-        return axios.delete(USER_API_BASE_URL+'?id='+reservationId+'&&description='+description, AuthService.getAuthHeader());
+        return axios.put(USER_API_BASE_URL+'/cancel', {reservationId:reservationId, description:description}, AuthService.getAuthHeader());
     }
 
 

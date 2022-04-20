@@ -8,23 +8,16 @@ function ProcedureList({clickable, row, setProcedure}){
             </div>
             <div className="card-body">
                 <div className="row">
-                    {clickable === false
-                        ?
-                        <>
-                            <div className="col-8 text-start">{row.description}</div>
-                            <div className="col-4 text-start">Price: {row.price}</div>
-                        </>
-
-                        :
                         <>
                             <div className="col-8 text-start">{row.description}</div>
                             <div className="col-3 text-start">Price: {row.price}</div>
-                            <input className="form-check-input col-1 p-0" type="radio" name="procedure" value={row.name} onClick={() => {
+
+                            {clickable &&
+                                <input className="form-check-input col-1 p-0" type="radio" name="procedure" value={row.name} onClick={() => {
                                 setProcedure(row)
                             }}/>
+                            }
                         </>
-                    }
-
                 </div>
             </div>
         </div>

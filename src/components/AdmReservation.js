@@ -11,16 +11,15 @@ import * as React from "react";
 
 function AdmReservation() {
     const [page, setPage] = useState(0);
-    const [pageSize, setPageSize] = useState(3);
     const [maxPage, setMaxPage] = useState(0);
-    const [sortBy, setSortBy] = useState("startTime");
     const [sortType, setSortType] = useState("asc");
     const [messageTxt, setMessage] = useState("");
     const [date, setDate] = useState(new Date());
     const [status, setStatus] = useState("");
-    const navigate = useNavigate();
     const [reservations, setReservations] = useState([]);
-    const [description, setDescription] = useState("No specific reason");
+    const navigate = useNavigate();
+    const pageSize = 3;
+    const sortBy = "startTime";
 
     let timeOption = ["asc", "desc"];
     let statusOption = ["ALL", "CREATED", "CONFIRMED", "DONE"];
@@ -63,7 +62,6 @@ function AdmReservation() {
     const setAsDone = (id) => {
         ReservationService.setReservationAsDone(id).then(result => {
             if (result.data.status === 200) {
-                setPage(0);
                 reloadCartList(sortBy + ',' + sortType)
             }
         });
@@ -72,19 +70,20 @@ function AdmReservation() {
     const confirm = (id) => {
         ReservationService.confirmReservation(id).then(result => {
             if (result.data.status === 200) {
-                setPage(0);
                 reloadCartList(sortBy + ',' + sortType)
             }
         });
     }
     const cancel = (id) => {
-        let des = prompt("Please enter reason for cancel this reservation","Illness");
-        if(des != null){
-            setDescription(des);
-            ReservationService.cancelReservation(id, des).then(result => {
+        let description = prompt("Please enter reason for cancel this reservation","Illness");
+        if(description != null){
+            ReservationService.cancelReservation(id, description).then(result => {
                 if (result.data.status === 200) {
-                    setPage(0);
-                    reloadCartList(sortBy + ',' + sortType)
+                    reloadCartList(sortBy + ',' + sortType);
+                    console.log(maxPage +" "+pageSize+" "+page);
+                    if((maxPage-1)%pageSize === 0 && page !== 0){
+                        setPage(page-1);
+                    }
                 }else{
                     setMessage(result.data.message);
                 }
