@@ -1,6 +1,6 @@
 ## NNPIA semestrální práce - frontend
 
-Napsáno v ReactJs.
+Napsáno v ReactJs. Nasazeno pomocí [vercel](https://nnpia-frontend-xi.vercel.app/)
 
 #### Téma
 Tématem semestrální práce bylo napsání aplikace pro kosmetický salon.
