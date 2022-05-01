@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {format} from 'date-fns';
 
-const USER_API_BASE_URL = 'http://localhost:8080/public/';
+const USER_API_BASE_URL = 'https://nnpia-backend.herokuapp.com/public/';
 
 class PublicService {
 

@@ -67,6 +67,9 @@ function Reservation() {
             PublicService.createReservation(reservation).then(result => {
                 if (result.data.status === 200) {
                     navigate("/");
+                }else{
+                    setMessage( messageTxt + result.data.message)
+
                 }
             })
             setMessage("");
