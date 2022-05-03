@@ -2,7 +2,7 @@ import axios from 'axios';
 import {format} from 'date-fns';
 import AuthService from './AuthService';
 
-const USER_API_BASE_URL = 'https://nnpia-backend.herokuapp.com/api/reservation';
+const USER_API_BASE_URL = process.env.REACT_APP_TARGET_DOMAIN+'/api/reservation';
 
 class ReservationService {
 

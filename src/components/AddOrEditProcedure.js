@@ -100,7 +100,7 @@ function AddOrEditProcedure(props) {
                 <div className="form-group row">
                     <label className="col-sm-3 col-form-label">Price</label>
                     <div className="col-sm-7">
-                        <input type="number" placeholder={price != 0 ? price: "Price"} className="form-control"
+                        <input type="number" min="0" placeholder={price != 0 ? price: "Price"} className="form-control"
                                value={price} onChange={handleChangePrice}
                                required/>
                     </div>
